@@ -1719,12 +1719,14 @@ Eu te amo, você, você mesma, sua lindinha que agora deve tar chorando de felic
     function hideRequestedSections() {
       document.querySelectorAll('#edit-toggle-btn').forEach(function (el) {
         el.hidden = true;
+        el.style.setProperty('display', 'none', 'important');
         el.setAttribute('aria-hidden', 'true');
       });
       document.querySelectorAll('#root section').forEach(function (section) {
         var text = (section.innerText || section.textContent || '').toLocaleLowerCase('pt-BR');
         if (text.includes('nossa playlist') || text.includes('dicionário abluble') || text.includes('dicionario abluble')) {
           section.hidden = true;
+          section.style.setProperty('display', 'none', 'important');
           section.setAttribute('aria-hidden', 'true');
         }
       });
